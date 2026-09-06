@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Youth for Seva</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #241a1d;
+    --paper: #fffaf4;
+    --sunrise: #f0522b;
+    --marigold: #f9b019;
+    --orchid: #93288f;
+    --leaf: #3fa34d;
+    --bloom: #f4a6c6;
+    --muted: #7a6f6a;
+    --line: #ecdfd4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+  }
+  h1, h2 { font-family: "Fraunces", Georgia, serif; line-height: 1.15; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .navbar {
+    position: sticky;
+    top: 0;
+    background: rgba(255,250,244,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    z-index: 10;
+  }
+  .navbar-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .brand img { height: 44px; width: 44px; border-radius: 50%; }
+  .brand span { font-family: "Fraunces", serif; font-weight: 600; font-size: 19px; }
+  .nav-links { display: flex; gap: 26px; font-size: 15px; font-weight: 500; }
+  .nav-links a { opacity: 0.8; }
+  .nav-cta {
+    background: var(--sunrise);
+    color: #fff !important;
+    padding: 9px 18px;
+    border-radius: 999px;
+    opacity: 1 !important;
+  }
+
+  .hero {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 72px 24px 88px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .eyebrow { color: var(--orchid); font-weight: 600; font-size: 14px; margin-bottom: 16px; }
+  .hero h1 { font-size: 44px; font-weight: 600; }
+  .hero p { margin-top: 20px; max-width: 46ch; color: var(--muted); font-size: 17px; }
+  .hero-actions { margin-top: 32px; display: flex; gap: 14px; }
+  .btn-primary {
+    background: var(--sunrise); color: #fff; padding: 13px 26px;
+    border-radius: 999px; font-weight: 600; font-size: 15px; display: inline-block;
+  }
+  .btn-ghost {
+    padding: 13px 26px; border-radius: 999px; font-weight: 600;
+    font-size: 15px; border: 1.5px solid var(--ink);
+  }
+  .hero-figure { position: relative; height: 300px; }
+  .orb { position: absolute; border-radius: 50%; opacity: 0.9; }
+  .orb-1 { width: 170px; height: 170px; background: var(--marigold); top: 0; left: 30px; }
+  .orb-2 { width: 130px; height: 130px; background: var(--orchid); top: 50px; right: 10px; }
+  .orb-3 { width: 110px; height: 110px; background: var(--leaf); bottom: 10px; left: 80px; }
+  .orb-4 { width: 85px; height: 85px; background: var(--bloom); bottom: 50px; right: 80px; }
+
+  .about {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 80px 24px;
+  }
+  .about h2 { font-size: 30px; margin-bottom: 20px; }
+  .about p { color: var(--muted); max-width: 65ch; margin-bottom: 14px; }
+
+  .programs { max-width: 1080px; margin: 0 auto; padding: 0 24px 96px; }
+  .programs h2 { font-size: 30px; margin-bottom: 32px; }
+  .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-top: 5px solid var(--sunrise);
+    border-radius: 18px;
+    padding: 24px;
+  }
+  .card:nth-child(2) { border-top-color: var(--orchid); }
+  .card:nth-child(3) { border-top-color: var(--leaf); }
+  .card:nth-child(4) { border-top-color: var(--marigold); }
+  .card h3 { font-size: 18px; margin-bottom: 8px; }
+  .card p { color: var(--muted); font-size: 14.5px; }
+
+  footer {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 40px 24px 32px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  footer img { height: 32px; width: 32px; border-radius: 50%; }
+
+  @media (max-width: 800px) {
+    .hero, .programs-grid { grid-template-columns: 1fr; }
+    .hero-figure { height: 200px; order: -1; }
+    .nav-links { display: none; }
+    .hero h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="#">
+        <img src="logo.png" alt="Youth for Seva logo">
+        <span>Youth for Seva</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#" class="nav-cta">Volunteer</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Seva Swabhava Apna, Hum Nitya Hi Sanjeeve</p>
+      <h1>Service is a way of life — not an event.</h1>
+      <p>Youth for Seva is a nationwide volunteering movement founded in 2007, channeling the energy of young India into education, health, livelihood and rural development work.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn-primary">Become a volunteer</a>
+        <a href="#programs" class="btn-ghost">See our programs</a>
+      </div>
+    </div>
+    <div class="hero-figure" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="orb orb-4"></div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>Founded in Bengaluru, built for the whole country</h2>
+    <p>Youth for Seva began in April 2007 when Sri Venkatesh Murthy set out to give India's young people a structured, meaningful way to volunteer. What started as a local effort has grown into one of the country's largest organised volunteering movements.</p>
+    <p>Every programme is built around two ideas: Runa, the debt we owe to the society that raised us, and Yajna, the spirit of selfless giving.</p>
+  </section>
+
+  <section class="programs" id="programs">
+    <h2>Where the work happens</h2>
+    <div class="programs-grid">
+      <div class="card">
+        <h3>Vidya Chetana</h3>
+        <p>Scholarships for students from underprivileged backgrounds pursuing PUC, degree, engineering and medical studies.</p>
+      </div>
+      <div class="card">
+        <h3>Doctors for Seva</h3>
+        <p>Medical professionals offering voluntary care: school health check-ups, adolescent health awareness and community camps.</p>
+      </div>
+      <div class="card">
+        <h3>Seva Circle</h3>
+        <p>Community volunteering groups active in 15 cities, open to anyone aged 16 and above.</p>
+      </div>
+      <div class="card">
+        <h3>Environment & Rural Development</h3>
+        <p>Plantation drives and integrated rural development work building self-reliant communities.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <img src="logo.png" alt="Youth for Seva logo">
+    <p>Youth for Seva &middot; est. 2007, Bengaluru &middot; demo homepage</p>
+  </footer>
+
+</body>
+</html>
